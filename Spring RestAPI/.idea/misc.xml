@@ -6,6 +6,9 @@
       <list>
         <option value="$PROJECT_DIR$/00.RestController/pom.xml" />
         <option value="$PROJECT_DIR$/01.Handling-Java-Object/pom.xml" />
+        <option value="$PROJECT_DIR$/02.Handling-URI-Data-PathVariable/pom.xml" />
+        <option value="$PROJECT_DIR$/03.Handling-URI-Data-RequestParam/pom.xml" />
+        <option value="$PROJECT_DIR$/04.Handling-URI-Data-MatrixVariable/pom.xml" />
       </list>
     </option>
   </component>

@@ -8,7 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="01.Handling-Java-Object" />
+        <module name="04.Handling-URI-Data-MatrixVariable" />
+        <module name="03.Handling-URI-Data-RequestParam" />
         <module name="00.RestController" />
+        <module name="02.Handling-URI-Data-PathVariable" />
       </profile>
     </annotationProcessing>
   </component>
@@ -16,6 +19,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="00.RestController" options="-parameters" />
       <module name="01.Handling-Java-Object" options="-parameters" />
+      <module name="02.Handling-URI-Data-PathVariable" options="-parameters" />
+      <module name="03.Handling-URI-Data-RequestParam" options="-parameters" />
+      <module name="04.Handling-URI-Data-MatrixVariable" options="-parameters" />
     </option>
   </component>
 </project>
