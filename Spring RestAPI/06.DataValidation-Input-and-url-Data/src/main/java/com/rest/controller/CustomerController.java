@@ -26,8 +26,8 @@ public class CustomerController {
     private CustomerServiceImpl customerService;
 
     @GetMapping(value="/{phoneNo}")
-    public ResponseEntity<CustomerDTO> fetchCustomer(@PathVariable("phoneNo") @Pattern(regexp = "[0-9]{10}", message = "{customer.phoneNo.invalid}") long phoneNo) throws NoSuchCustomerException {
-        CustomerDTO customerDTO = customerService.getCustomerByPhoneNo(phoneNo);
+    public ResponseEntity<CustomerDTO> fetchCustomer(@PathVariable("phoneNo") @Pattern(regexp = "[0-9]{10}", message = "{customer.phoneNo.invalid}") String phoneNo) throws NoSuchCustomerException {
+        CustomerDTO customerDTO = customerService.getCustomerByPhoneNo(Long.parseLong(phoneNo));
         return new ResponseEntity<>(customerDTO, HttpStatus.OK);
     }
 
@@ -45,15 +45,15 @@ public class CustomerController {
     }
 
     @PutMapping(value ="/{phoneNo}", consumes = "application/json")
-    public ResponseEntity<String> updateCustomer(@PathVariable("phoneNo") @Pattern(regexp = "[0-9]{10}", message = "{customer.phoneNo.invalid}") long phoneNo, @RequestBody CustomerDTO customerDTO) throws NoSuchCustomerException {
-        customerService.updateCustomer(phoneNo, customerDTO);
+    public ResponseEntity<String> updateCustomer(@PathVariable("phoneNo") @Pattern(regexp = "[0-9]{10}", message = "{customer.phoneNo.invalid}") String phoneNo,@RequestBody CustomerDTO customerDTO) throws NoSuchCustomerException {
+        customerService.updateCustomer(Long.parseLong(phoneNo), customerDTO);
         String successMessage= environment.getProperty("API.UPDATE_SUCCESS");
         return new ResponseEntity<>(successMessage,HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/{phoneNo}")
-    public ResponseEntity<String> deleteCustomer(@PathVariable("phoneNo") @Pattern(regexp="[0-9]{10}", message = "{customer.phoneNo.invalid}") long phoneNo) throws NoSuchCustomerException {
-        customerService.deleteCustomer(phoneNo);
+    public ResponseEntity<String> deleteCustomer(@PathVariable("phoneNo") @Pattern(regexp="[0-9]{10}", message = "{customer.phoneNo.invalid}") String phoneNo) throws NoSuchCustomerException {
+        customerService.deleteCustomer(Long.parseLong(phoneNo));
         String successMessage = environment.getProperty("API.DELETE_SUCCESS");
         return new ResponseEntity<>(successMessage,HttpStatus.OK);
     }
