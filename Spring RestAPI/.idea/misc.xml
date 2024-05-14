@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/00.RestController/pom.xml" />
+        <option value="$PROJECT_DIR$/01.Handling-Java-Object/pom.xml" />
+        <option value="$PROJECT_DIR$/02.Handling-URI-Data-PathVariable/pom.xml" />
+        <option value="$PROJECT_DIR$/03.Handling-URI-Data-RequestParam/pom.xml" />
+        <option value="$PROJECT_DIR$/04.Handling-URI-Data-MatrixVariable/pom.xml" />
+        <option value="$PROJECT_DIR$/05.ExceptionalHandling-RestControllerAdvice/pom.xml" />
+        <option value="$PROJECT_DIR$/06.DataValidation-Input&amp;url Data/pom.xml" />
+        <option value="$PROJECT_DIR$/06.DataValidation-Input-url Data/pom.xml" />
+        <option value="$PROJECT_DIR$/06.DataValidation-Input-and-url-Data/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
