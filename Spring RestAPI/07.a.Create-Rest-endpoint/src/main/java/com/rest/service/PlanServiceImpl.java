@@ -8,12 +8,32 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.ArrayList;
+
 @Service("planService")
 @Transactional
 public class PlanServiceImpl implements PlanService{
 
     @Autowired
     private PlanRepository planRepository;
+
+    public List<PlanDTO> fetchPlan() throws NoSuchPlanException {
+        List<Plan> planDTOs = (List<Plan>) planRepository.findAll();
+        if(planDTOs.isEmpty()){
+            throw new NoSuchPlanException("No plan details found");
+        }
+        List<PlanDTO> planDTOS = new ArrayList<>();
+        for(Plan plan: planDTOs){
+            PlanDTO planDTO = new PlanDTO();
+            planDTO.setPlanId(plan.getPlanId());
+            planDTO.setPlanName(plan.getPlanName());
+            planDTO.setNationalRate(plan.getNationalRate());
+            planDTO.setLocalRate(plan.getLocalRate());
+            planDTOS.add(planDTO);
+        }
+        return planDTOS;
+    }
 
     @Override
     public PlanDTO fetchPlan(Integer planId) throws NoSuchPlanException {
